@@ -1,10 +1,10 @@
-## REPET Pipeline Test
+# REPET Pipeline Test
 
 A complete tutorial for executing REPET pipeline steps is availabe [here](https://urgi.versailles.inra.fr/Tools/REPET/TEdenovo-tuto).
 
 However, at many points, erros were encountered during testing. Here I am documenting any error I encountered while testing.
 
-# Important note
+## Important note
 
 You will need to run the pipeline from your project folder and These files should be in your project folder.
 
@@ -14,44 +14,44 @@ c) repbase20.05_ntSeq_cleaned_TE.fa
 d) repbase20.05_aaSeq_cleaned_TE.fa
 e) TEdenovo config file
 
-# Step 1 genomic sequence preparation 
+## Step 1 genomic sequence preparation 
 
 ```TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 1```
 
 This ran successfully
 
-# Step 2 all by all alignment
+## Step 2 all by all alignment
 
 ```TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 2 -s Blaster```
 
 This ran successfully
 
-# Step 2 Structural detection
+## Step 2 Structural detection
 
 ```TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 2 --struct```
 
 This ran successfully
 
-# Step 3 HSPs clustering
+## Step 3 HSPs clustering
 
-```a) TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 3 -s Blaster -c Grouper  
+```TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 3 -s Blaster -c Grouper```
 
 Failed to run with error message "grouper command not found". It was reported, installed and ran successfully
 
-b) TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 3 -s Blaster -c Recon
-c) TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 3 -s Blaster -c Piler```
+```TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 3 -s Blaster -c Recon
+TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 3 -s Blaster -c Piler```
 
-# Step 3 clustering of structural detection 
+## Step 3 clustering of structural detection 
 
-TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 3 --struct
+```TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 3 --struct```
 
 This ran successfully
 
-# Step 4 Build consensus
+## Step 4 Build consensus
 
-```a) TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 4 -s Blaster -c Grouper -m Map
-b) TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 4 -s Blaster -c Recon -m Map 
-c) TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 4 -s Blaster -c Piler -m Map```
+```TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 4 -s Blaster -c Grouper -m Map```
+```TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 4 -s Blaster -c Recon -m Map ```
+```TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 4 -s Blaster -c Piler -m Map```
 
 These ran successfully
 
@@ -102,7 +102,7 @@ If you want to combine results from both means of detection and ran the correspo
 ```
 This ran successfully
 
-# Step 6 Consensus classification
+## Step 6 Consensus classification
 
 If you want to use only detection by similarity, you must have ran corresponding previous steps. Please launch the following command:
 ```TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 6 -s Blaster -c GrpRecPil -m Map```
@@ -112,11 +112,11 @@ If you want to use only structural detection, you must have ran corresponding pr
 If you want to combine results from both means of detection and ran the corresponding previous steps, please launch the following command:
 ```TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 6 -s Blaster -c GrpRecPil -m Map --struct```
 
-# Step 7 Filtering 
+## Step 7 Filtering 
 
 ```TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 7 -s Blaster -c GrpRecPil -m Map```
 
-# Step 8 Consensus clustering
+## Step 8 Consensus clustering
 
 a) TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 8 -s Blaster -c GrpRecPil -m Map -f Blastclust
 b) TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 8 -s Blaster -c GrpRecPil -m Map -f MCL
