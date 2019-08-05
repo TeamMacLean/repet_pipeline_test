@@ -34,7 +34,9 @@ This ran successfully
 
 ## Step 3 HSPs clustering
 
-```TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 3 -s Blaster -c Grouper
+```
+TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 3 -s Blaster -c Grouper
+```
 
 Failed to run with error message "grouper command not found". It was reported, installed and ran successfully
 
