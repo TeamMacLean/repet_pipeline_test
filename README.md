@@ -40,6 +40,7 @@ TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 3 -s Blaster -c Grouper
 
 Failed to run with error message "grouper command not found". It was reported, installed and ran successfully
 
+```
 TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 3 -s Blaster -c Recon
 TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 3 -s Blaster -c Piler
 ```
@@ -67,6 +68,7 @@ These ran successfully
 ## Step 5 Consensus detect features
 
 If you want to use only detection by similarity, you must have ran corresponding previous steps. Please launch the following command:
+
 ```
 TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 5 -s Blaster -c GrpRecPil -m Map
 ```
