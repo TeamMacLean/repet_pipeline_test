@@ -152,8 +152,8 @@ TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 7 -s Blaster -c GrpRecPil -m Map
 ```
 
 ## Step 8 Consensus clustering
-
-a) TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 8 -s Blaster -c GrpRecPil -m Map -f Blastclust
-b) TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 8 -s Blaster -c GrpRecPil -m Map -f MCL
-
+```
+TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 8 -s Blaster -c GrpRecPil -m Map -f Blastclust
+TEdenovo.py -P DmelChr4 -C TEdenovo.cfg -S 8 -s Blaster -c GrpRecPil -m Map -f MCL
+```
 These ran successfully
